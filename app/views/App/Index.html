@@ -1,12 +1,22 @@
 {{set . "title" "Home"}}
 {{template "header.html" .}}
+<script type="text/javascript">
+//auto expand textarea
+function adjust_textarea(h) {
+      h.style.height = "20px";
+          h.style.height = (h.scrollHeight)+"px";
+}
 
-<header class="hero-unit" style="background-color:#A9F16C">
+</script>
+
+<header class="hero-unit" style="background-color:#757b80">
   <div class="container">
     <div class="row">
-      <div class="hero-text">
-        <h1>It works!</h1>
-        <p></p>
+      <div class="hero-text" align="center">
+          <img src="/public/img/logo.png" alt="Tor Roulette logo" height="120" width="120">
+          <h3>{{.msg}}</h3>
+        <p align="center">TOR EXIT IP ADDRESS: {{.iptor}}</p>
+        <p align="right"><button type="button" onclick="$('#loading').stop(true,true).fadeIn('slow').show();">ATIVAR ROLETA</button></p>
       </div>
     </div>
   </div>
@@ -15,9 +25,29 @@
 <div class="container">
   <div class="row">
     <div class="span6">
+      <form action="/App/Ipscan" method="POST" id="form">
+        <div class="form-style-8">
+        {{with $field := field "target" .}}
+        <p> TARGET: <input type="url" name="{{$field.Name}}"  value="{{$field.Flash}}"/> </p>
+        {{end}}
+        {{with $field := field "loop" .}}
+        <p>LOOP: <input type="number" min="1" name="{{$field.Name}}"  value="{{$field.Flash}}"/></p>
+        {{end}}
+        {{with $field := field "interval" .}}
+        <p>INTERVAL (Seconds): <input type="number" min="1" max="3600" name="{{$field.Name}}"  value="6"/></p>
+        {{end}}
+        <select name="typeattack" form="form">
+          <option value="simple">Simple Get</option>
+          <option value="scan">Path Scan</option>
+          <option value="bruteforce">Brute Force</option>
+          <option value="sqlinjection">SQL Injection</option>
+        </select>
+        <input type="submit" value="START"; onclick="$('#loading').stop(true,true).fadeIn('slow').show();">
+      </form>
+      </div>
+      <div id="loading" style="display:none;"></div>
       {{template "flash.html" .}}
     </div>
   </div>
 </div>
-
 {{template "footer.html" .}}

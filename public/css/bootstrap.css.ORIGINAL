@@ -252,7 +252,7 @@ a:hover {
 }
 
 .span6 {
-  width: 250px;
+  width: 460px;
 }
 
 .span5 {
@@ -5726,12 +5726,12 @@ a.badge:hover {
 }
 
 .hero-unit {
-  padding: 0px;
+  padding: 60px;
   margin-bottom: 30px;
   background-color: #eeeeee;
-  -webkit-border-radius: 70px;
-     -moz-border-radius: 70px;
-          border-radius: 70px;
+  -webkit-border-radius: 6px;
+     -moz-border-radius: 6px;
+          border-radius: 6px;
 }
 
 .hero-unit h1 {
@@ -5774,7 +5774,7 @@ a.badge:hover {
 }
 
 
-<link href='' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
 <style type="text/css">
 .form-style-8{
     font-family: 'Open Sans Condensed', arial, sans;
@@ -5848,36 +5848,4 @@ a.badge:hover {
     background:linear-gradient(to bottom, #34CACA 5%, #30C9C9 100%);
     background-color:#34CACA;
 }
-
-.loader {
-    position: fixed;
-    left: 0px;
-    top: 0px;
-    width: 100%;
-    height: 100%;
-    z-index: 9999;
-    background: url('/public/img/animacao-2.gif') 50% 50% no-repeat rgb(249,249,249);
-}
-
-
-#page {
-    display: none;
-}
-#loading {
-    display: block;
-    position: absolute;
-    top: 0;
-    left: 0;
-    z-index: 100;
-    width: 100vw;
-    height: 100vh;
-    background-color: rgba(192, 192, 192, 0.8);
-    background-image: url("/public/img/animacao-2.gif");
-    background-size: 400px 415px;
-    background-repeat: no-repeat;
-    background-position: center;
-}
-
-
-
 </style>

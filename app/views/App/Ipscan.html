@@ -1,0 +1,12 @@
+{{set . "title" "Home"}}
+{{template "header.html" .}}
+
+<script>
+</script>
+<div>
+<h1>LOOP: {{.loop}}</h1>
+<h1>TARGET: {{.target}}</h1>
+<h1>TIME: {{.elapsed}}</h1>
+<a href="/"> <- BACK</a>
+</div>
+{{template "footer.html" .}}
