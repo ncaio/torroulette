@@ -1,18 +1,17 @@
-# Welcome to Revel
+# Welcome to Torroulette
 
 ## Getting Started
 
-A high-productivity web framework for the [Go language](http://www.golang.org/).
+sequential/switching tor nodes  [Torroulette](http://http://8bit.academy/torroulette/index.html).
 
 ### Start the web server:
 
-    revel run myapp
+    revel run github.com/ncaio/torroulette.git
 
    Run with <tt>--help</tt> for options.
 
 ### Go to http://localhost:9000/ and you'll see:
 
-"It works"
 
 ### Description of Contents
 
