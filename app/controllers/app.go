@@ -112,7 +112,7 @@ func (c App) Ipscan(target string, loop string, interval string, typeattack stri
 	//
 	if typeattack == "sqlinjection" {
 		for i := 1; i <= x; i++ {
-			lines := readfile("/usr/local/go/src/torroulette/public/file/sqlinjection")
+			lines := readfile("/go/src/torroulette/public/file/sqlinjection")
 			getanony(target, string(lines))
 			go reloadip()
 			time.Sleep(time.Second * amt)
@@ -169,7 +169,7 @@ func getanony(url string, randpath string) string {
 	iptor := torexitip()
 	log.Printf("GETANONY in:  %s with address: %s", url+randpath, iptor)
 	req.SetBasicAuth("user", "passwd")
-	req.Header.Set("User-Agent", readfile("/usr/local/go/src/torroulette/public/file/useragents"))
+	req.Header.Set("User-Agent", readfile("/go/src/torroulette/public/file/useragents"))
 	res, err := httpClient.Do(req)
 	if err != nil {
 		key := "1"
@@ -191,7 +191,7 @@ func getanonybt(url string, randpath string) string {
 	req.SetBasicAuth(randpath, randpath)
     iptor := torexitip()
 	log.Printf("GETANONYBT path:  %s with address: %s", randpath, iptor)
-	req.Header.Set("User-Agent", readfile("/usr/local/go/src/torroulette/public/file/useragents"))
+	req.Header.Set("User-Agent", readfile("/go/src/torroulette/public/file/useragents"))
 	res, err := httpClient.Do(req)
 	if err != nil {
 		key := "1"
